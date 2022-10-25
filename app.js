@@ -1,9 +1,11 @@
 const express = require('express')
 app = express();
-const io = require('socket.io')(8000)
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
 const users = {}
 const PORT = process.env.PORT || 3000
-
+const socketPort = 8000;
+io.listen(socketPort);
 let clients = 0
 io.on('connection', socket=> {
   clients++
