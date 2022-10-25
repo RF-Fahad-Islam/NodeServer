@@ -1,5 +1,9 @@
 const io = require('socket.io')(8000)
+var http = require('http');
 const users = {}
+const PORT = process.env.PORT || 3000
+const express = require('express')
+const app = express()
 
 let clients = 0
 io.on('connection', socket=> {
@@ -20,3 +24,9 @@ io.on('connection', socket=> {
     delete users[socket.id]
   })
 })
+
+app.get("/",(res, req)=> {
+  res.send("<h1>Hello</h1>")
+})
+app.listen(PORT)
+console.log(PORT)
