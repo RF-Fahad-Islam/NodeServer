@@ -25,9 +25,9 @@ io.on('connection', socket=> {
   })
 })
 
-app.get("/", (req, res)=> {
-res.send(`<h1>io is listening on ${PORT}</h1>`)
-})
-app.listen(PORT, ()=> {
-  console.log(`http://localhost:${PORT}`)
-})
+// app.get("/", (req, res)=> {
+// res.send(`<h1>io is listening on ${PORT}</h1>`)
+// })
+// app.listen(PORT, ()=> {
+//   console.log(`http://localhost:${PORT}`)
+// })
